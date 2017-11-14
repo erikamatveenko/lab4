@@ -1,0 +1,24 @@
+﻿@model lab4.Models.BrandViewModel
+@{
+    ViewData["Title"] = "Brands";
+}
+<table style="margin:20px;">
+    <caption>Бренды</caption>
+    <tr>
+        <th>Название</th>
+        <th>Компания</th>
+        <th>Страна</th>
+        <th></th>
+    </tr>
+    @foreach (var brand in Model.Brands)
+            {
+        <tr>
+            <td>@brand.BrandName</td>
+            <td>@brand.BrandCompany</td>
+            <td>@brand.BrandCountry</td>
+            <td><a href="~/Home/Edit/@brand.BrandID">Редактировать</a></td>
+        </tr>
+    }
+</table>
+
+

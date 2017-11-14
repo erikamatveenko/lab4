@@ -1,0 +1,26 @@
+﻿@model lab4.Models.OwnerViewModel
+@{
+    ViewData["Title"] = "Owners";
+}
+<table style="margin:20px;">
+    <caption>Владельцы</caption>
+    <tr>
+        <th>Имя</th>
+        <th>Адрес</th>
+        <th>Пасспорт</th>
+        <th>Дата рождения</th>
+    </tr>
+    @foreach (var owner in Model.Owners)
+    {
+        <tr>
+            <td>@owner.OwnerName</td>
+            <td>@owner.OwnerBirthDate</td>
+            <td>@owner.OwnerPassport</td>
+            <td>@owner.OwnerBirthDate</td>
+            
+            <td><a href="~/Home/Edit/@owner.OwnerID">Редактировать</a></td>
+        </tr>
+    }
+</table>
+
+
