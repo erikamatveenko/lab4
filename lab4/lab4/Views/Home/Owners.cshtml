@@ -2,22 +2,30 @@
 @{
     ViewData["Title"] = "Owners";
 }
+<style type="text/css">
+    th, td {
+        padding-right: 15px;
+    }
+</style>
+
 <table style="margin:20px;">
     <caption>Владельцы</caption>
     <tr>
+        <th>Код владельца</th>
         <th>Имя</th>
         <th>Адрес</th>
-        <th>Пасспорт</th>
+        <th>Паспорт</th>
         <th>Дата рождения</th>
     </tr>
     @foreach (var owner in Model.Owners)
     {
         <tr>
+            <td>@owner.OwnerID</td>
             <td>@owner.OwnerName</td>
-            <td>@owner.OwnerBirthDate</td>
+            <td>@owner.OwnerAddress</td>
             <td>@owner.OwnerPassport</td>
             <td>@owner.OwnerBirthDate</td>
-            
+
             <td><a href="~/Home/Edit/@owner.OwnerID">Редактировать</a></td>
         </tr>
     }

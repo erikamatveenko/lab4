@@ -2,9 +2,16 @@
 @{
     ViewData["Title"] = "Brands";
 }
+<style type="text/css">
+    th, td {
+        padding-right: 15px;
+    }
+</style>
+
 <table style="margin:20px;">
     <caption>Бренды</caption>
     <tr>
+        <th>Код бренда</th>
         <th>Название</th>
         <th>Компания</th>
         <th>Страна</th>
@@ -13,6 +20,7 @@
     @foreach (var brand in Model.Brands)
             {
         <tr>
+            <td>@brand.BrandID</td>
             <td>@brand.BrandName</td>
             <td>@brand.BrandCompany</td>
             <td>@brand.BrandCountry</td>
